@@ -1,0 +1,29 @@
+	public static void main(String[] args) {
+		String str = "shivprasad";
+		
+		// 1
+		System.out.println(getLengthOfString(str));
+		
+		// 2nd way
+		int len = 0;
+		char[] arr = str.toCharArray();
+		
+		for( char c: arr) {
+			len++;
+		}
+		System.out.println("Len..."+len);
+		
+	}
+
+	public static int getLengthOfString(String str) {
+		int i = 0;
+		try {
+			for (i = 0;; i++) {
+				str.charAt(i);
+			}
+
+		} catch (Exception e) {
+			//System.out.print("getting exception");
+		}
+		return i;
+	}
