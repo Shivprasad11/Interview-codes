@@ -12,8 +12,6 @@ public class StringCountDuplicateCharJava8Streams {
 
     public static void main(String[] args) {
         printCountOfDuplicateCharJava8Stream("bbbcccccddddddaaaa");
-       
-
     }
 
     // Using hashmap : print count of each character in a given string.
@@ -37,3 +35,33 @@ public class StringCountDuplicateCharJava8Streams {
     }
 
 }
+
+Using MAP
+
+input : abcdabd
+output : {a=2, b=2, c=1, d=2}
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class StringFindDuplicatesMain {
+
+	public static void main(String[] args) {
+		String str = "abcdabd";
+		Map<Character, Integer> charCountMap = new LinkedHashMap<Character, Integer>();
+		
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+
+			if (charCountMap.containsKey(c)) {
+				charCountMap.put(c, charCountMap.get(c) + 1);
+			} else {
+				charCountMap.put(c, 1);
+			}
+		}
+		System.out.println(charCountMap);
+	}
+
+}
+
+
