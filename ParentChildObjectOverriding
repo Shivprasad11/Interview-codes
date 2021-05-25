@@ -1,0 +1,49 @@
+class Human {
+	// Overridden method
+	public void disp() {
+		System.out.println("disp() method of parent class");
+	}
+}
+
+class Boy extends Human {
+
+	public void disp() {
+		System.out.println("disp() method of Child class");
+	}
+
+	public void newMethod() {
+		System.out.println("new method of child class");
+	}
+
+}
+class Test {
+	public static void main(String args[]) {
+		
+		
+		
+		Human obj = new Human();
+		// This will call the Human class disp()
+		obj.disp();
+
+		Human obj2 = new Boy();
+		// This will call the Boy class disp()
+		obj2.disp();
+		
+		// This will call the Boy class disp()
+		Boy b = new Boy();
+		b.disp();
+
+		// Boy b = new Human(); // error
+		
+		// Test b = new Human(); // error
+		
+		// Test b = new Boy(); // error
+		
+		Test t = new Test();
+		t.disp();
+		
+	}
+	private void disp() {
+		System.out.println("test");
+	}
+}
