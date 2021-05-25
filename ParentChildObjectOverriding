@@ -1,5 +1,6 @@
 class Human {
-	// Overridden method
+	// Overridden method 
+	// public or protected
 	public void disp() {
 		System.out.println("disp() method of parent class");
 	}
@@ -7,6 +8,7 @@ class Human {
 
 class Boy extends Human {
 
+	// but protected is not allowed if it is public in parent call because reducing is not allowed
 	public void disp() {
 		System.out.println("disp() method of Child class");
 	}
