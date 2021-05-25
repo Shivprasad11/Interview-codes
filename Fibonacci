@@ -1,0 +1,41 @@
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n1 = 0, n2 = 0, n3 = 1;
+
+		while (n3 <= 3) {
+			n1 = n2;
+			n2 = n3;
+			n3 = n1 + n2;
+			System.out.println(n3);
+		}
+	}
+}
+
+input : abcdabd
+output : {a=2, b=2, c=1, d=2}
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class StringFindDuplicatesMain {
+
+	public static void main(String[] args) {
+		String str = "abcdabd";
+		Map<Character, Integer> charCountMap = new LinkedHashMap<Character, Integer>();
+		
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+
+			if (charCountMap.containsKey(c)) {
+				charCountMap.put(c, charCountMap.get(c) + 1);
+			} else {
+				charCountMap.put(c, 1);
+			}
+		}
+		System.out.println(charCountMap);
+	}
+
+}
+
