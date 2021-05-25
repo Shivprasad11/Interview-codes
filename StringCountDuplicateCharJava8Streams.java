@@ -49,7 +49,7 @@ public class StringFindDuplicatesMain {
 	public static void main(String[] args) {
 		String str = "abcdabd";
 		Map<Character, Integer> charCountMap = new LinkedHashMap<Character, Integer>();
-		
+
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
 
@@ -60,8 +60,7 @@ public class StringFindDuplicatesMain {
 			}
 		}
 		System.out.println(charCountMap);
+		//uisng stream
+		charCountMap.entrySet().stream().forEach(s -> System.out.println(s.getKey() + ":" + s.getValue()));
 	}
-
 }
-
-
