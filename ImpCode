@@ -1,0 +1,64 @@
+class Human {
+	// Overridden method
+	protected void disp() {
+		System.out.println("disp() method of Human class");
+	}
+}
+
+class Boy extends Human {
+	public void disp() {
+		System.out.println("disp() method of Boy class");
+	}
+
+	public void newMethod() {
+		System.out.println("new method of Boy class");
+	}
+}
+
+class Test {
+	static final int c = 0;	
+	static {
+		System.out.println("Inside static");
+//		public static void main(String[] args) {
+//			System.out.println("inside static main()");
+//		} // error
+	}
+	public static void main(String[] args) {
+		// c =30; //error
+		final int x;
+		x = 20;
+		// x=40; //error as already initialised.
+
+		final int y = 20;
+		// y=30; //error
+
+		Human obj = new Human();
+		// This will call the Human class disp()
+		obj.disp();
+
+		Human obj2 = new Boy();
+		// This will call the Boy class disp()
+		obj2.disp();
+
+		// This will call the Boy class disp()
+		Boy b = new Boy();
+		b.disp();
+
+		// Boy b = new Human(); // error
+		// Test b = new Human(); // error
+		// Test b = new Boy(); // error
+
+		Test t = new Test();
+		t.disp();
+
+		try {
+			int a = 0 / 0;
+		} catch (Throwable e) { // allowed Thowable here
+			System.out.println("Occured exeption is : " + e.getLocalizedMessage());
+		}
+	}
+
+	private void disp() {
+		System.out.println("test class");
+	}
+}
