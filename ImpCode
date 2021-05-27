@@ -6,6 +6,7 @@ class Human {
 }
 
 class Boy extends Human {
+	//reducing is vibility is not allowed
 	public void disp() {
 		System.out.println("disp() method of Boy class");
 	}
